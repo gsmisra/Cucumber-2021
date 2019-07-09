@@ -29,6 +29,6 @@ public class RunnerClass extends DriverUtil{
 	}
 }
 
-//GIT link: https://github.com/gsmisra/cucumber_repo.git
+//GIT link: https://github.com/gsmisra/AutomationMasterRepo.git
 //mvn clean test -U -Dtest=RunnerClass
 //mvn net.masterthought:maven-cucumber-reporting:generate

@@ -1,0 +1,51 @@
+package starter.stepdefinitions;
+
+import org.openqa.selenium.By;
+
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import net.thucydides.core.pages.PageObject;
+
+
+public class google_search_step extends PageObject {
+		
+	@Given("User navigates to google")
+	public void GOTO_GOOGLE() {
+		getDriver().get("https://www.google.com");
+	}
+
+	@Then("User enters a search string {string}")
+	public void user_enters_a_search_string(String SearchString) {
+		getDriver().findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div/div[1]/div/div[1]/input")).sendKeys(SearchString);
+	}
+	
+
+	@And("Clicks on Search button")
+	public void CLICK_SEARCH() {
+		getDriver().findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div/div[2]/div[2]/div/center/input[1]")).click();
+	}
+
+	@Then("Get all the available response links")
+	public void GET_ALL_LINKS() {
+		int link_count=getDriver().findElements(By.tagName("a")).size();
+		for(int iLink=0;iLink<=link_count-1;iLink++) {
+			String link_text=getDriver().findElements(By.tagName("a")).get(iLink).getText().trim();
+			System.out.println(link_text);
+		}
+	}
+	
+	@Then("Get all the posted price of  the phone")
+	public void get_all_the_posted_price_of_pixel() {
+	    int price_size=getDriver().findElements(By.xpath("//*[@id=\"rhs_block\"]/div/div/div/div[4]/div[1]/div[2]/div[1]/div/span")).size();
+	    for(int iPrice=0;iPrice<=price_size-1;iPrice++) {
+	    	String PriceString=getDriver().findElements(By.xpath("//*[@id=\"rhs_block\"]/div/div/div/div[4]/div[1]/div[2]/div[1]/div/span")).get(iPrice).getText();
+	    	System.out.println(PriceString);
+	    }
+	}
+	
+	@Then("Get all the posted price of the phone")
+	public void get_all_the_posted_price_of_the_phone() {
+		
+	}
+}

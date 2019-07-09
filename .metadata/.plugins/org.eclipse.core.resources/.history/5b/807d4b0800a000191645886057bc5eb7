@@ -1,0 +1,105 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 5,
+        "name": "Navigate to google and search something",
+        "description": "",
+        "id": "google-search;navigate-to-google-and-search-something",
+        "after": [
+          {
+            "result": {
+              "duration": 720831073,
+              "status": "passed"
+            },
+            "match": {
+              "location": "googleSteps.wrapup()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5072684058,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Launch google.com",
+            "match": {
+              "location": "googleSteps.launch_google_com()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 247227826,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Enter the string \"cucumber\" in the search box",
+            "match": {
+              "arguments": [
+                {
+                  "val": "cucumber",
+                  "offset": 18
+                }
+              ],
+              "location": "googleSteps.enter_the_string_in_the_search_box(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1357063884,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Click search",
+            "match": {
+              "location": "googleSteps.click_search()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 23782493,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Verify the output",
+            "match": {
+              "location": "googleSteps.verify_the_output()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8262457043,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Extract all the result text",
+            "match": {
+              "location": "googleSteps.extract_all_the_result_text()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Google Search",
+    "description": "      As a user I should be able to search some shit in Google",
+    "id": "google-search",
+    "keyword": "Feature",
+    "uri": "features/google.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@RunAll"
+      }
+    ]
+  }
+]

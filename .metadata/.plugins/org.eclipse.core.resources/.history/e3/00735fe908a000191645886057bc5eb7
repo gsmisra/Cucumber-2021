@@ -1,0 +1,17 @@
+package env;
+
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+
+public class Hooks {
+	@Before
+	public void before(Scenario scenario) {
+	    this.scenario = scenario;
+	}
+	
+	@After("@NegativeTest")
+	public void beforeScenario(Scenario scenario) {
+		System.out.println("A hook just like that bruh...");
+	}
+}

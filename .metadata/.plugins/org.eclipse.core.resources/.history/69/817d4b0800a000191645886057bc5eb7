@@ -1,0 +1,9 @@
+Feature: Google Search
+        As a user I should be able to search some shit in Google
+
+  Scenario: Navigate to google and search something    [90m# features/google.feature:4[0m
+    [32mGiven [0m[32mLaunch google.com[0m                            [90m# googleSteps.launch_google_com()[0m
+    [32mThen [0m[32mEnter the string "[0m[32m[1mcucumber[0m[32m" in the search box[0m [90m# googleSteps.enter_the_string_in_the_search_box(String)[0m
+    [32mAnd [0m[32mClick search[0m                                   [90m# googleSteps.click_search()[0m
+    [32mThen [0m[32mVerify the output[0m                             [90m# googleSteps.verify_the_output()[0m
+    [32mAnd [0m[32mExtract all the result text[0m                    [90m# googleSteps.extract_all_the_result_text()[0m

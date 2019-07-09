@@ -1,0 +1,32 @@
+package env;
+
+import org.junit.runner.RunWith;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.java.After;
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		plugin = {
+			 "pretty", "html:target/cucumberHtmlReport",
+		     "html:target/cucumberHtmlReport",
+			 "pretty:target/cucumber-json-report.json"
+		     },
+		features = "classpath:features/google.feature",
+		glue = {
+				"info.seleniumcucumber.userStepDefintions"
+			   }
+)
+
+public class RunnerClass extends DriverUtils{
+	
+	public static void start() {
+		System.out.println("Start execution");
+	}
+	
+	@After
+	public static void wrapup() {
+		driver.qu
+	}
+}

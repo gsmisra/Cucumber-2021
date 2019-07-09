@@ -1,0 +1,47 @@
+package starter.stepdefinitions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import net.thucydides.core.pages.PageObject;
+
+
+public class google_search_step extends PageObject {
+	
+	@Given("Launch google.com")
+	public void launch_google_com() {
+	   getDriver().get("https://google.com");
+	}
+
+	@Then("Enter the string {string} in the search box")
+	public void enter_the_string_in_the_search_box(String search_string) {
+		getDriver().findElement(By.xpath("*//input[@title='Search']")).sendKeys(search_string);
+	}
+
+	@Then("Click search")
+	public void click_search() {
+		getDriver().findElement(By.xpath("*//input[@title='Search']")).sendKeys(Keys.ENTER);
+	}
+
+	@Then("Verify the output")
+	public void verify_the_output() {
+		try {
+			if(getDriver().findElement(By.xpath("*//div[@id=\"search\"]/div/div/div/div/div/div/div/div//div/span[1]/span[1]/b[contains(text(),'Serenity')]")) != null) {
+				System.out.println("Got search result!");
+			}
+		}
+		
+		catch(NoSuchElementException e) {
+			System.out.println("OOPSE...Could not get search result!");
+		}
+	}
+
+	@Then("Click on wikipedia link and take a snapa")
+	public void click_on_wikipedia_link_and_take_a_snapa() {
+	    
+	}
+}
