@@ -28,7 +28,7 @@ import org.openqa.selenium.remote.ErrorHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.sun.tools.sjavac.Log;
+//import com.sun.tools.sjavac.Log;
 
 import cucumber.api.Scenario;
 
@@ -104,7 +104,7 @@ public class DriverUtil {
 							capabilities = DesiredCapabilities.chrome();
 					        capabilities.setJavascriptEnabled(true);
 					        capabilities.setCapability("takesScreenshot", true);
-					        driver = chooseDriver(capabilities);
+					        driver = chooseDriver(capabilities, "browser", "edge");
 					        driver.manage().timeouts().setScriptTimeout(DEFAULT_WAIT, TimeUnit.SECONDS);
 					        driver.manage().window().maximize();
 					        break;
@@ -117,13 +117,13 @@ public class DriverUtil {
     }
 
     
-    private static WebDriver chooseDriver(DesiredCapabilities capabilities) {
-		String preferredDriver = System.getProperty("browser", "chrome");
+    private static WebDriver chooseDriver(DesiredCapabilities capabilities, String driverMode, String browserName) {
+		String preferredDriver = System.getProperty(driverMode, browserName);
 		boolean headless = System.getProperty("headless", "false").equals("true");
 		switch (preferredDriver.toLowerCase()) {
-		
 			case "edge":
 				try {
+					System.setProperty("webdriver.edge.driver", currentPath+"/src/test/resources/driver/msedgedriver.exe");
 					driver = new EdgeDriver();
 				}
 				
@@ -139,7 +139,7 @@ public class DriverUtil {
 				final ChromeOptions chromeOptions = new ChromeOptions();
 				if (headless) {
 					chromeOptions.addArguments("--headless");
-					Log.info("Running on headless chrome...");
+					//Log.info("Running on headless chrome...");
 				}
 				
 				capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
@@ -188,22 +188,14 @@ public class DriverUtil {
 			try {
 				driver.close();
 				driver.quit();
-			} 
-			
-			catch (NoSuchMethodError nsme) {
-			} 
-			
-			catch (NoSuchSessionException nsse) {
-			} 
-			
-			catch (SessionNotCreatedException snce) {
-				
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 			driver = null;
 		}
 	}
 	
-	public void SNAP(Scenario scenario, String description_string) throws IOException {
+	public void snap(Scenario scenario, String description_string) throws IOException {
 	      File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 	      scenario.write(description_string);
 	      scenario.embed(Files.readAllBytes(screenshot.toPath()), "image/png");

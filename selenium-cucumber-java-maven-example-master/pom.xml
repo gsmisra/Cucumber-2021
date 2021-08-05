@@ -2,8 +2,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>sc-java-testing</groupId>
-	<artifactId>sc-java-testing</artifactId>
+	<groupId>TDBank-US-Mobile-Regression-Report</groupId>
+	<artifactId>TDBank-US-Mobile-Regression-Report</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<repositories>
@@ -67,7 +67,13 @@
 			<artifactId>java-client</artifactId>
 			<version>5.0.4</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
@@ -116,14 +122,21 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>GauravMisraSankar_Cucumber_Master_Framework</projectName>
-							<outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
-							<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+							<projectName>cucumber-jvm-example</projectName>
+							<outputDirectory>${project.build.directory}</outputDirectory>
+							<inputDirectory>${project.build.directory}</inputDirectory>
+							<jsonFiles>
+								<param>**/cucumber.json</param>
+							</jsonFiles>
+							<classificationFiles>
+								<param>sample.properties</param>
+								<param>other.properties</param>
+							</classificationFiles>
+							<buildNumber>69</buildNumber>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-
 		</plugins>
 	</build>
 

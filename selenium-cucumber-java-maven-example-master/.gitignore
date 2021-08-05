@@ -1,3 +1,5 @@
 /target
 /Screenshots
 .classpath
+/.idea
+*/.idea/workspace.xml

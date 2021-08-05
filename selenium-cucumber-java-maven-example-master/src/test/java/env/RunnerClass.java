@@ -8,11 +8,9 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		plugin = {
-			 "pretty",
-		     "html:target/cucumber/Html-Report",
-			 "json:target/cucumber-json-report.json",
-			 "json:target/cucumber.json",
-			 "junit:target/cucumber-reports/junit-reports/junit-reports.txt"
+				"pretty", "json:target/cucumber.json",
+				"junit:target/cucumber-reports/Cucumber.xml",
+				"html:target/cucumber-reports"
 		     },
 		features = "classpath:features/google.feature",
 		glue = {
