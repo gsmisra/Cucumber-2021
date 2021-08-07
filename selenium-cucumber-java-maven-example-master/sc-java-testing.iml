@@ -84,6 +84,13 @@
     <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.11.3" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer:20190325.1" level="project" />
     <orderEntry type="library" name="Maven: commons-configuration:commons-configuration:1.10" level="project" />
+    <orderEntry type="library" name="Maven: com.relevantcodes:extentreports:2.41.2" level="project" />
+    <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.8.11.1" level="project" />
+    <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.23" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver:3.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:bson:3.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-core:3.0.4" level="project" />
+    <orderEntry type="library" name="Maven: com.aventstack:extentreports:3.0.0" level="project" />
     <orderEntry type="library" name="Maven: io.appium:java-client:5.0.4" level="project" />
     <orderEntry type="library" name="Maven: cglib:cglib:3.2.5" level="project" />
     <orderEntry type="library" name="Maven: org.ow2.asm:asm:5.2" level="project" />

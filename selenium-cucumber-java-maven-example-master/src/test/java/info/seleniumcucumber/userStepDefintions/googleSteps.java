@@ -2,42 +2,55 @@ package info.seleniumcucumber.userStepDefintions;
 
 import java.util.ArrayList;
 
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import env.DriverUtil;
+import utils.ExtentReportUtil;
 
 public class googleSteps extends DriverUtil{
 	public Scenario scenario;
 	public static WebDriver driver = DriverUtil.getDriver();
-	
+	public static ExtentReportUtil report = new ExtentReportUtil();
+
+
 	@Before
 	public void before(Scenario scenario) {
 	    this.scenario = scenario;
+	    report.initializeReport("Search in google");
 	}
 	
 	@Given("^Launch google\\.com$")
 	public void launch_google_com() throws Throwable {
+		report.logStep("info","Launching browser!");
 	    driver.get("https://google.com");
+		report.logStep("Pass","Browser launched");
 	}
 
 	@Then("^Enter the string \"([^\"]*)\" in the search box$")
 	public void enter_the_string_in_the_search_box(String search_string) throws Throwable {
 	    driver.findElement(By.xpath("*//input[@title='Search']")).sendKeys(search_string);
 	    snap(scenario, "Google should be open");
+		report.logStep("Pass","Search string is entered");
 	}
 
 	@Then("^Click search$")
 	public void click_search() throws Throwable {
-	    //driver.findElement(By.xpath("*//input[1][@value='Google Search']")).click();
-		driver.findElement(By.xpath("*//input[@title='Search']")).sendKeys(Keys.ENTER);
+		try{
+			driver.findElement(By.xpath("*//input[@title='Search']")).sendKeys(Keys.ENTER);
+			report.logStep("pass","Search button is clicked");
+		}catch(Exception e){
+			report.logStep("fail","Unable to click search button");
+		}
 	}
 
 	@Then("^Verify the output$")
@@ -51,6 +64,7 @@ public class googleSteps extends DriverUtil{
 		
 		catch(NoSuchElementException e) {
 			System.out.println("OOPSE...Could not get search result!");
+			report.logStep("fail","Unable to get search result");
 		}
 	}
 
@@ -91,5 +105,11 @@ public class googleSteps extends DriverUtil{
 	    driver.switchTo().window(tabs2.get(1));
 	    driver.findElement(By.xpath("*//span[contains(text(),'Join Free')]")).click();
 	    snap(scenario,"Joining for free page should be open!");
+	}
+
+	@After
+	public static void endTest(){
+		report.flushReport();
+		driver.quit();
 	}
 }

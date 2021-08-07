@@ -60,6 +60,17 @@
 			<version>4.7.0</version>
 		</dependency>
 
+		<!--Extent report-->
+		<dependency>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 
 		<!-- These are the Appium dependencies -->
 		<dependency>
@@ -73,7 +84,12 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>TDBank-US-Mobile-Regression-Report</groupId>
+			<artifactId>TDBank-US-Mobile-Regression-Report</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -96,7 +112,7 @@
 					<target>1.8</target>
 					<compilerArgument>-Werror</compilerArgument>
 
-					<systemPropertyVariables>
+<!--					<systemPropertyVariables>
 						<property>
 							<name>browser</name>
 							<value>${browser}</value>
@@ -105,7 +121,7 @@
 							<name>cloud_config</name>
 							<value>${cloud_config}</value>
 						</property>
-					</systemPropertyVariables>
+					</systemPropertyVariables>-->
 				</configuration>
 			</plugin>
 
@@ -124,14 +140,10 @@
 						<configuration>
 							<projectName>cucumber-jvm-example</projectName>
 							<outputDirectory>${project.build.directory}</outputDirectory>
-							<inputDirectory>${project.build.directory}</inputDirectory>
-							<jsonFiles>
+							<!--<inputDirectory>${project.build.directory}</inputDirectory>-->
+							<!--<jsonFiles>
 								<param>**/cucumber.json</param>
-							</jsonFiles>
-							<classificationFiles>
-								<param>sample.properties</param>
-								<param>other.properties</param>
-							</classificationFiles>
+							</jsonFiles>-->
 							<buildNumber>69</buildNumber>
 						</configuration>
 					</execution>
