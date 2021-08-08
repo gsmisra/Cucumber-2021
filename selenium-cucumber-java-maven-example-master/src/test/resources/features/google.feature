@@ -7,8 +7,4 @@ Feature: Google Search
  	Then Enter the string "cucumber" in the search box
  	And Click search
  	Then Verify the output
-# 	And Click on wikipedia link and take a snap
-# 	Then Navigate to https://cucumber.io/
-# 	And Click on the link Automate with Cucumber
-# 	And Click on the donate button
-# 	Then Click on Join Free link
+ 	And Click on wikipedia link and take a snap

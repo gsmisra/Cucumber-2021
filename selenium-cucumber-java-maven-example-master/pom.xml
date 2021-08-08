@@ -84,11 +84,6 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
-		<dependency>
-			<groupId>TDBank-US-Mobile-Regression-Report</groupId>
-			<artifactId>TDBank-US-Mobile-Regression-Report</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -140,10 +135,10 @@
 						<configuration>
 							<projectName>cucumber-jvm-example</projectName>
 							<outputDirectory>${project.build.directory}</outputDirectory>
-							<!--<inputDirectory>${project.build.directory}</inputDirectory>-->
-							<!--<jsonFiles>
+							<inputDirectory>${project.build.directory}</inputDirectory>
+							<jsonFiles>
 								<param>**/cucumber.json</param>
-							</jsonFiles>-->
+							</jsonFiles>
 							<buildNumber>69</buildNumber>
 						</configuration>
 					</execution>

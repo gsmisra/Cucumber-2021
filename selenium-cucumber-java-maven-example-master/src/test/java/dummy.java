@@ -3,7 +3,6 @@ import java.util.List;
 
 public class dummy {
 
-
     public static void main(String[] args) {
 
         List<Integer> appleList = new ArrayList<>();
@@ -14,7 +13,6 @@ public class dummy {
         List<Integer> orangeList = new ArrayList<>();
         orangeList.add(5);
         orangeList.add(-6);
-
 
         countApplesAndOranges(7,11, 5,15, appleList, orangeList);
     }

@@ -1,4 +1,4 @@
-package env;
+package utils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -194,11 +194,10 @@ public class DriverUtil {
 			driver = null;
 		}
 	}
-	
-	public void snap(Scenario scenario, String description_string) throws IOException {
+
+	/*public void snap(Scenario scenario, String description_string) throws IOException {
 	      File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 	      scenario.write(description_string);
 	      scenario.embed(Files.readAllBytes(screenshot.toPath()), "image/png");
-	      System.out.println("snap...");
-	}
+	}*/
 }
