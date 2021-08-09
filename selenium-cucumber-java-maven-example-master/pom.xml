@@ -102,7 +102,7 @@
 				<version>2.12.4</version>
 				<configuration>
 					<includes>
-						<include>**/CucumberRunner*.java</include>
+						<include>RunnerClass.java</include>
 					</includes>
 					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
