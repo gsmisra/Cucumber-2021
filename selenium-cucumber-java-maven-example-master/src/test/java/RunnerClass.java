@@ -30,3 +30,9 @@ public class RunnerClass {
 //GIT link: https://github.com/gsmisra/AutomationMasterRepo.git
 //mvn clean test -U -Dtest=RunnerClass
 //mvn net.masterthought:maven-cucumber-reporting:generate
+
+/*
+* Complete maven command:
+* mvn test -Dcucumber.options="--tags @Linkedin" net.masterth
+ought:maven-cucumber-reporting:generate
+* */
