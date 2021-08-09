@@ -135,7 +135,7 @@ public class DriverUtil {
 				return driver;
 				
 			case "chrome":
-				System.setProperty("webdriver.chrome.driver", currentPath+"\\src\\test\\resources\\driver\\chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver", currentPath+"/src/test/resources/driver/chromedriver.exe");
 				final ChromeOptions chromeOptions = new ChromeOptions();
 				if (headless) {
 					chromeOptions.addArguments("--headless");

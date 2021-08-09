@@ -3,8 +3,6 @@ package env;
 import org.junit.runner.RunWith;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
-import utils.DriverUtil;
-
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -21,7 +19,7 @@ import utils.DriverUtil;
 		monochrome=true
 )
 
-public class RunnerClass extends DriverUtil {
+public class RunnerClass {
 	
 	public static void start() {
 		System.out.println("Start execution");
